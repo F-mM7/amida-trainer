@@ -1,13 +1,12 @@
 /* === 共通スタイル === */
 * {
   margin: 0;
+  align-items: center;
 }
 
 .container {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* あみだ全体 */
@@ -17,24 +16,18 @@
   height: 60vh;
   display: flex;
   position: relative;
-  justify-content: center;
-  align-items: center;
   margin: 10vh 0;
 }
-
-/* 縦線 */
 
 .row {
   flex: 1;
   height: 100%;
   position: relative;
 }
-
 .line {
   border-left: 3px solid #ccc;
 }
 
-/* 横線 */
 .horizontal {
   position: absolute;
   width: 100%;
@@ -53,7 +46,6 @@
 /* 上の円（スタート位置） */
 .start {
   transform: translate(-50%, -100%);
-  background-color: #f0f0f0;
   border: 2px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
@@ -87,25 +79,14 @@
   height: 10vh;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 15px 20px;
 }
 
 .control-group {
   display: flex;
-  width: 100%; /* 幅を揃える */
-  gap: 10px;
 }
 
-.controls label {
+.control-group * {
+  padding: 6px;
   font-size: 16px;
-  width: 120px; /* ラベルの幅を固定 */
-}
-
-.controls input {
-  padding: 6px 8px;
-  font-size: 16px;
-  border-radius: 4px;
-  width: 100px; /* 入力欄の幅を固定 */
+  width: 48px;
 }
