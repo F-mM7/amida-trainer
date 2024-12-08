@@ -103,16 +103,14 @@ function handleButtonClick(index, numLines) {
   currentStep++;
   highlightNextCircle();
 
-  if (clickedOrder.length === numLines) {
-    checkResults();
-  }
+  if (clickedOrder.length === numLines) checkResults();
 }
 
 function checkResults() {
   let isCorrect = true;
 
   for (let i = 0; i < correctOrder.length; i++) {
-    if (clickedOrder[i] !== correctOrder[i]) {
+    if (correctOrder[clickedOrder[i]] !== i) {
       isCorrect = false;
       break;
     }
