@@ -19,7 +19,7 @@ function generateAmida() {
 
   const numLines = parseInt(document.getElementById("numLines").value);
   const steps = parseInt(document.getElementById("numSteps").value);
-  const amidaHeight = 400;
+  const amidaHeight = container.clientHeight;
 
   if (numLines < 2 || steps < 1) {
     alert("縦線は2以上、ステップ数は1以上にしてください。");
@@ -29,11 +29,15 @@ function generateAmida() {
   const verticalLines = [];
   const horizontalPositions = [];
 
+  const spacer = document.createElement("div");
+  spacer.classList.add("row");
+  container.appendChild(spacer);
+
   // 縦線と円の生成
   for (let i = 0; i < numLines; i++) {
     const line = document.createElement("div");
-    line.className = "line";
-    line.style.height = `${amidaHeight}px`;
+    line.classList.add("row");
+    line.classList.add("line");
 
     const startCircle = document.createElement("div");
     startCircle.className = "circle start";
@@ -52,7 +56,6 @@ function generateAmida() {
     verticalLines.push(line);
   }
 
-  // 横線の生成（条件付き2進数）
   for (let step = 0; step < steps; step++) {
     let randomValue;
     do {
@@ -65,7 +68,6 @@ function generateAmida() {
       if ((randomValue & (1 << bit)) !== 0) {
         const horizontalLine = document.createElement("div");
         horizontalLine.className = "horizontal";
-        horizontalLine.style.width = "40px";
         horizontalLine.style.top = `${
           ((step + 1) / (steps + 1)) * amidaHeight
         }px`;
@@ -116,11 +118,8 @@ function checkResults() {
     }
   }
 
-  if (isCorrect) {
-    generateAmida(); // 正解なら新しいあみだくじを生成
-  } else {
-    resetSelection(); // 不正解なら選択のみリセット
-  }
+  if (isCorrect) generateAmida();
+  else resetSelection();
 }
 
 function resetSelection() {
