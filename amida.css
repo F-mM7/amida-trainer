@@ -5,12 +5,9 @@
 
 .container {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
 }
 
 /* あみだ全体 */
@@ -23,9 +20,6 @@
   justify-content: center;
   align-items: center;
   margin: 10vh 0;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* 縦線 */
@@ -95,30 +89,23 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  background: #ffffff;
   padding: 15px 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .control-group {
   display: flex;
-  justify-content: space-between; /* ラベルと入力欄を左右に配置 */
-  align-items: center;
   width: 100%; /* 幅を揃える */
   gap: 10px;
 }
 
 .controls label {
   font-size: 16px;
-  color: #333;
   width: 120px; /* ラベルの幅を固定 */
 }
 
 .controls input {
   padding: 6px 8px;
   font-size: 16px;
-  border: 1px solid #ccc;
   border-radius: 4px;
   width: 100px; /* 入力欄の幅を固定 */
 }
