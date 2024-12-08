@@ -3,34 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>あみだくじゲーム</title>
-    <!-- 外部CSSファイルの読み込み -->
+    <title>あみだくじトレーナー</title>
     <link rel="stylesheet" href="amida.css" />
   </head>
   <body>
     <div class="container">
-      <h1>あみだくじゲーム</h1>
       <div class="controls">
-        <label for="numLines">縦線の数 (2以上): </label>
-        <input type="number" id="numLines" min="2" value="6" />
-        <!-- 初期値6 -->
-
-        <label for="numSteps">ステップ数 (1以上): </label>
-        <input type="number" id="numSteps" min="1" value="12" />
-        <!-- 初期値12 -->
-
-        <button onclick="generateAmida()">ゲーム開始</button>
+        <div class="control-group">
+          <label for="numLines">Node</label>
+          <input type="number" id="numLines" min="2" value="6" />
+        </div>
+        <div class="control-group">
+          <label for="numSteps">Step</label>
+          <input type="number" id="numSteps" min="1" value="10" />
+        </div>
       </div>
       <div id="amidaContainer" class="amida"></div>
-      <div id="result"></div>
     </div>
-
     <script src="amida.js"></script>
-    <script>
-      // ページがロードされたら自動でゲームを開始する
-      window.onload = () => {
-        generateAmida();
-      };
-    </script>
   </body>
 </html>

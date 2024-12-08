@@ -117,11 +117,9 @@ function checkResults() {
   }
 
   if (isCorrect) {
-    console.log("正解！新しいあみだくじを生成します。");
-    generateAmida();
+    generateAmida(); // 正解なら新しいあみだくじを生成
   } else {
-    console.log("不正解！選択をリセットします。");
-    resetSelection();
+    resetSelection(); // 不正解なら選択のみリセット
   }
 }
 
